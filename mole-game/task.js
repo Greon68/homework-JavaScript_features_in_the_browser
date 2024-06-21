@@ -7,12 +7,9 @@ function counter_value() {
     clicker_counter.textContent = Number(clicker_counter.textContent)+1;
     if (clicker_counter.textContent>25){
       alert('Игра окончена');
-      // Обнуляем счётчик пойманных кротов:
-    caught.textContent = 0;
-    // Обнуляем счётчик промахов:
-    lost.textContent = 0; 
-    // Обнуляем счётчик общего количества кликов:  
-    clicker_counter.textContent = 0
+
+    // Обнуляем счётчики:
+      zero_counter()
     };
     return clicker_counter.textContent
  };
@@ -26,12 +23,9 @@ function caught_count() {
 
   if (caught.textContent >=10){
     alert('Победа');
-    // Обнуляем счётчик пойманных кротов:
-    caught.textContent = 0;
-    // Обнуляем счётчик промахов:
-    lost.textContent = 0; 
-    // Обнуляем счётчик общего количества кликов:  
-    clicker_counter.textContent = 0
+
+    // Обнуляем счётчики:
+    zero_counter()
   };
 
   return caught.textContent
@@ -49,21 +43,31 @@ function lost_count() {
   if (lost.textContent >= 5){
     alert('Вы проиграли');
 
-    // Обнуляем счётчик пойманных кротов:
-    caught.textContent = 0;
-    // Обнуляем счётчик промахов:
-    lost.textContent = 0; 
-    // Обнуляем счётчик общего количества кликов:  
-    clicker_counter.textContent = 0   
+    // Обнуляем счётчики:
+    zero_counter()
   };
 
   return lost.textContent
 };
 
 
+//  Функция , обнуляющая счётчики:
+
+function zero_counter(){
+  // Обнуляем счётчик пойманных кротов:
+  caught.textContent = 0;
+  // Обнуляем счётчик промахов:
+  lost.textContent = 0; 
+  // Обнуляем счётчик общего количества кликов:  
+  clicker_counter.textContent = 0   
+};
+
+
 
 // Выделяем массив элементов , описывающих лунки
+
 let hole = document.querySelectorAll("div.hole")
+
 // console.log(hole); // NodeList(9):0:div#hole1.hole
                                 // 1:div#hole2.hole
                                 // 2:div#hole3.hole
